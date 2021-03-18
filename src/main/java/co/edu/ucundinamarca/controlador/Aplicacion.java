@@ -5,11 +5,6 @@
  */
 package co.edu.ucundinamarca.controlador;
 
-<<<<<<< HEAD
-import co.edu.ucundinamarca.modelo.Triangulo;
-=======
-import co.edu.ucundinamarca.modelo.Circulo;
->>>>>>> 22f8b30686ad8375ab8b673e2672a2713fada4f4
 
 
 
