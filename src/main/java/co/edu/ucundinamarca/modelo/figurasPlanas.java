@@ -5,6 +5,8 @@
  */
 package co.edu.ucundinamarca.modelo;
 
+import java.util.Scanner;
+
 /**
  *Clase padre encargada de realizar operaciones sobre figuras geometricas planas
  *tales como hallar su perímetro y su área.
@@ -30,6 +32,10 @@ public class figurasPlanas {
      */
     byte numeroLados;
     
+    /**
+     * Objeto de la clase Scanner encargado de capturar los valores ingresados por el usuario
+     */
+    Scanner lector = new Scanner(System.in);
     
     /**
      * Metodo encargado de solicitar las medidas de las figuras geométricas al usuario
