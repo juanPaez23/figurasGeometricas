@@ -5,7 +5,11 @@
  */
 package co.edu.ucundinamarca.controlador;
 
+<<<<<<< HEAD
 import co.edu.ucundinamarca.modelo.Triangulo;
+=======
+import co.edu.ucundinamarca.modelo.Circulo;
+>>>>>>> 22f8b30686ad8375ab8b673e2672a2713fada4f4
 
 
 
@@ -24,10 +28,5 @@ public class Aplicacion {
      * @param args 
      */
     public static void main(String[] args) {
-      
-        Triangulo f=new Triangulo();
-        f.capturarMedidas();
-        System.out.println(""+f.calcularArea());
-        System.out.println(""+f.calcularPerimetro());
-        System.out.println(""+f.determinarClasificacion());
+    
     }}
