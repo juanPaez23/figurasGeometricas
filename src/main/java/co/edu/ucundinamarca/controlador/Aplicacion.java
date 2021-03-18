@@ -5,6 +5,8 @@
  */
 package co.edu.ucundinamarca.controlador;
 
+import co.edu.ucundinamarca.modelo.Triangulo;
+
 
 
 /**
@@ -23,5 +25,9 @@ public class Aplicacion {
      */
     public static void main(String[] args) {
       
-      
+        Triangulo f=new Triangulo();
+        f.capturarMedidas();
+        System.out.println(""+f.calcularArea());
+        System.out.println(""+f.calcularPerimetro());
+        System.out.println(""+f.determinarClasificacion());
     }}

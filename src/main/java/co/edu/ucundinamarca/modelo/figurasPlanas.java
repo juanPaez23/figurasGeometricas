@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 
-public class figurasPlanas {
+public class FigurasPlanas {
     
     /**
      * Variable encargada de alojar el valor del perimetro de la figura geometrica
