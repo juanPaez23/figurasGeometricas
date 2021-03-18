@@ -20,34 +20,39 @@ public class figurasPlanas {
     /**
      * Variable encargada de alojar el valor del perimetro de la figura geometrica
      */
-    float perimetro;
+    double perimetro;
     /**
      * Variable encargada de alojar el valor del area de la figura geometrica
      */
-    float area;
+    double area;
     /**
      * Variable encargada de alojar el numero de lados de la figura
      */
     byte numeroLados;
     
     
+    /**
+     * Metodo encargado de solicitar las medidas de las figuras geométricas al usuario
+     * y almacenarlas en su respectiva variable
+     */
+    public void capturarMedidas (){
+    
+    }
     
     /**
-     * Metodo encargado de capturar las medidas de las figuras geométricas,
-     * calcular y retornar el valor de su perímetro
+     * Metodo encargado calcular y retornar el valor del perímetro de la figura
      * @return El perimetro calculado
      */
-    public float calcularPerimetro (){
+    public double calcularPerimetro (){
     
     return perimetro;
     }
     
     /**
-     * Metodo encargado de capturar las medidas de las figuras geométricas,
-     * calcular y retornar el valor de su perímetro
+     * Metodo encargado de calcular y retornar el valor del área de la figura
      * @return El area calculada
      */
-    public float calcularArea (){
+    public double calcularArea (){
     
     return area;
     }

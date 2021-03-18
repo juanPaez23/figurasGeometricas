@@ -7,15 +7,15 @@ package co.edu.ucundinamarca.controlador;
 
 
 
-
-
 /**
  * Clase encargada de realizar la ejecución del programa.
+ * 
  * @author Eison Andrei Morales Pardo
  * @author Juan Camilo Páez Beltran 
  * @since 1.0
  * @version 1.0.0
  */
+
 public class Aplicacion {
     /**
      * Método encargado de ejecutar el programa
