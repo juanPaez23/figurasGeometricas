@@ -5,6 +5,8 @@
  */
 package co.edu.ucundinamarca.controlador;
 
+import co.edu.ucundinamarca.modelo.Circulo;
+
 
 
 /**
@@ -23,5 +25,9 @@ public class Aplicacion {
      */
     public static void main(String[] args) {
       
-      
+        Circulo objeto1= new Circulo();
+        
+        objeto1.capturarMedidas();
+        System.out.println("Su perimetro es: "+objeto1.calcularPerimetro());
+        System.out.println("Su area es: "+objeto1.calcularArea());
     }}
