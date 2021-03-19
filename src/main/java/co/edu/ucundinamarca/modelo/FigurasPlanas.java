@@ -37,7 +37,9 @@ public abstract class FigurasPlanas {
      */
     Scanner lector = new Scanner(System.in);
 
-    
+    /**
+     * Constructor de la clase FigurasPlanas
+     */
     public FigurasPlanas() {
     }
 
@@ -55,7 +57,7 @@ public abstract class FigurasPlanas {
     
     
     /**
-     * Método abstracto de implementación única en las clases hija usado para capturar las medidas necesarias
+     * Método usado para capturar las medidas necesarias para cada figura geométrica plana
      */
     public void capturarMedidas (){
     
@@ -104,7 +106,7 @@ public abstract class FigurasPlanas {
      * Método para leer la variable privada lado
      * @return Valor de lado
      */
-    public double getLado() {
+    public float getLado() {
         return lado;
     }
 

@@ -22,7 +22,7 @@ public class Rectangulo extends FigurasPlanas {
     
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método encargado de capturar las medidas de los dos lados opuestos del rectángulo
      */
     @Override
     public void capturarMedidas() {
@@ -35,7 +35,7 @@ public class Rectangulo extends FigurasPlanas {
     
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el perímetro del rectángulo
      */
     @Override
     public double calcularPerimetro() {
@@ -47,7 +47,7 @@ public class Rectangulo extends FigurasPlanas {
 
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el área del rectángulo
      */
     @Override
     public double calcularArea() {
@@ -59,7 +59,7 @@ public class Rectangulo extends FigurasPlanas {
     
     
     /**
-     * Método encargado de calcular el valos de las diagonales del cuadrado
+     * Método encargado de calcular el valos de las diagonales del rectángulo
      */
     public void calcularDiagonales (){
         double diagonal;

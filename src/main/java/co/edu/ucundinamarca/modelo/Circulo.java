@@ -21,7 +21,7 @@ public class Circulo extends FigurasPlanas {
 
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el perímetro del círculo
      */
     @Override
     public double calcularPerimetro() {
@@ -34,7 +34,7 @@ public class Circulo extends FigurasPlanas {
 
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el área del círculo
      */
     @Override
     public double calcularArea() {

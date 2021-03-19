@@ -32,7 +32,7 @@ public class Triangulo extends FigurasPlanas{
 
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para capturar las medidas de los lados del triángulo
      */
     @Override
     public void capturarMedidas() {
@@ -47,7 +47,7 @@ public class Triangulo extends FigurasPlanas{
     
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el área del triángulo
      */
     @Override
     public double calcularArea(){
@@ -62,7 +62,7 @@ public class Triangulo extends FigurasPlanas{
 
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el perímetro del triángulo
      */
     @Override    
     public double calcularPerimetro() {
@@ -91,5 +91,6 @@ public class Triangulo extends FigurasPlanas{
 
         return clasificacion;
     }
+    
     
 }

@@ -20,24 +20,14 @@ public class Cuadrado extends FigurasPlanas {
     float lado;
     
     
-    /**
-     * Método sobreescrito de la clase padre
-     */
-    @Override
-    public void capturarMedidas() {
-        
-        System.out.println("Digitar la medida del lado del cuadrado (en centimetros): ");
-        lado = lector.nextFloat();
-        
-    }
-    
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el perímetro del cuadrado
      */
     @Override
     public double calcularPerimetro() {
         
+        lado = super.getLado();
         super.setPerimetro(4 * lado);
         
         return super.getPerimetro();
@@ -45,7 +35,7 @@ public class Cuadrado extends FigurasPlanas {
 
     
     /**
-     * Método sobreescrito de la clase padre
+     * Método usado para calcular el área del cuadrado
      */
     @Override
     public double calcularArea() {
@@ -56,7 +46,7 @@ public class Cuadrado extends FigurasPlanas {
     }
     
     /**
-     * Método encargado de calcular el valos de las diagonales del cuadrado
+     * Método encargado de calcular el valor de las diagonales del cuadrado
      */
     public void calcularDiagonales (){
         double diagonal;
