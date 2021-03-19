@@ -55,9 +55,9 @@ public class Triangulo extends FigurasPlanas{
         
         //Cálculo del área del triángulo haciendo uso de la fórmula de Herón
         semiperimetro = (ladoA + ladoB + ladoC) / 2;
-        area = Math.sqrt(semiperimetro*(semiperimetro-ladoA)*(semiperimetro-ladoB)*(semiperimetro-ladoC));
+        super.setArea(Math.sqrt(semiperimetro*(semiperimetro-ladoA)*(semiperimetro-ladoB)*(semiperimetro-ladoC)));
         
-        return area;
+        return super.getArea();
     }
 
     
@@ -67,9 +67,9 @@ public class Triangulo extends FigurasPlanas{
     @Override    
     public double calcularPerimetro() {
         
-        perimetro = ladoA + ladoB + ladoC;
+        super.setPerimetro(ladoA + ladoB + ladoC);
         
-        return perimetro;
+        return super.getPerimetro();
     }
 
     

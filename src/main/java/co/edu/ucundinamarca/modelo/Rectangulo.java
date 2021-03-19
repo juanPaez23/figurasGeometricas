@@ -40,9 +40,9 @@ public class Rectangulo extends FigurasPlanas {
     @Override
     public double calcularPerimetro() {
         
-        perimetro = 2 * (ladoCorto + ladoLargo);
+        super.setPerimetro(2 * (ladoCorto + ladoLargo));
         
-        return perimetro;
+        return super.getPerimetro();
     }
 
     
@@ -52,9 +52,9 @@ public class Rectangulo extends FigurasPlanas {
     @Override
     public double calcularArea() {
         
-        area = ladoCorto * ladoLargo;
+        super.setArea(ladoCorto * ladoLargo);
         
-        return area;
+        return super.getArea();
     }
     
     

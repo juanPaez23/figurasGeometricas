@@ -17,49 +17,102 @@ import java.util.Scanner;
  * @version 1.0.0
  */
 
-public class FigurasPlanas {
+public abstract class FigurasPlanas {
     
     /**
      * Variable encargada de alojar el valor del perimetro de la figura geometrica
      */
-    double perimetro;
+    private double perimetro;
     /**
      * Variable encargada de alojar el valor del area de la figura geometrica
      */
-    double area;
+    private double area;
     /**
-     * Variable encargada de alojar el numero de lados de la figura
+     * Variable encargada de alojar el valor del lado de la figura geometrica
      */
-    byte numeroLados;
+    private float lado;
     
     /**
      * Objeto de la clase Scanner encargado de capturar los valores ingresados por el usuario
      */
     Scanner lector = new Scanner(System.in);
+
+    
+    public FigurasPlanas() {
+    }
+
     
     /**
-     * Metodo encargado de solicitar las medidas de las figuras geométricas al usuario
-     * y almacenarlas en su respectiva variable
+     * Constructor de la clase FigurasPlanas
+     * @param perimetro
+     * @param area 
+     */
+    public FigurasPlanas(double perimetro, double area) {
+        this.perimetro = perimetro;
+        this.area = area;
+    }
+    
+    
+    
+    /**
+     * Método abstracto de implementación única en las clases hija usado para capturar las medidas necesarias
      */
     public void capturarMedidas (){
     
+        System.out.println("Digitar la medida del lado (en centimetros): ");
+        lado = lector.nextFloat();
     }
     
+    
     /**
-     * Metodo encargado calcular y retornar el valor del perímetro de la figura
+     * Método abstracto de implementación única en las clases hija usado para calcular perímetro
      * @return El perimetro calculado
      */
-    public double calcularPerimetro (){
-    
-    return perimetro;
-    }
+    public abstract double calcularPerimetro ();
     
     /**
-     * Metodo encargado de calcular y retornar el valor del área de la figura
+     * Método abstracto de implementación única en las clases hija usado para calcular área
      * @return El area calculada
      */
-    public double calcularArea (){
-    
-    return area;
+    public abstract double calcularArea ();
+
+    /**
+     * Método para leer la variable privada perimetro
+     * @return Valor de perimetro
+     */
+    public double getPerimetro() {
+        return perimetro;
     }
+
+    public void setPerimetro(double perimetro) {
+        this.perimetro = perimetro;
+    }
+
+    /**
+     * Método para leer la variable privada area
+     * @return Valor de area
+     */
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    /**
+     * Método para leer la variable privada lado
+     * @return Valor de lado
+     */
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(float lado) {
+        this.lado = lado;
+    }
+
+    
+    
+    
 }

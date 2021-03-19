@@ -38,9 +38,9 @@ public class Cuadrado extends FigurasPlanas {
     @Override
     public double calcularPerimetro() {
         
-        perimetro = 4 * lado;
+        super.setPerimetro(4 * lado);
         
-        return perimetro;
+        return super.getPerimetro();
     }
 
     
@@ -50,9 +50,9 @@ public class Cuadrado extends FigurasPlanas {
     @Override
     public double calcularArea() {
         
-        area = Math.pow(lado, 2);
+        super.setArea(Math.pow(lado, 2));
         
-        return area;
+        return super.getArea();
     }
     
     /**

@@ -18,19 +18,7 @@ public class Circulo extends FigurasPlanas {
      * Variable encargada de alojar el valor ingresado por el usuario 
      */
     float radio;
-    
-    
-    /**
-     * Método sobreescrito de la clase padre
-     */
-    @Override
-    public void capturarMedidas() {
-        
-        System.out.println("Digitar el radio del circulo: ");
-        radio = lector.nextFloat();
-        
-    }
-    
+
     
     /**
      * Método sobreescrito de la clase padre
@@ -38,9 +26,10 @@ public class Circulo extends FigurasPlanas {
     @Override
     public double calcularPerimetro() {
         
-        perimetro = (2*Math.PI*radio);
+        radio = super.getLado();
+        super.setPerimetro(2*Math.PI*radio);
         
-        return perimetro;
+        return super.getPerimetro();
     }
 
     
@@ -50,9 +39,9 @@ public class Circulo extends FigurasPlanas {
     @Override
     public double calcularArea() {
         
-        area = Math.PI*Math.pow(radio, 2);
+        super.setArea(Math.PI*Math.pow(radio, 2));
         
-        return area;
+        return super.getArea();
     }
     
     
@@ -78,11 +67,11 @@ public class Circulo extends FigurasPlanas {
                 System.out.println("¡¡Información incorrecta!!\n No podemos calcular los arcos a partir de la misma");
             }else{
             if(angulo>=180){
-                arcoMayor = (perimetro * angulo) / 360;
-                arcoMenor = perimetro - arcoMayor;
+                arcoMayor = (super.getPerimetro() * angulo) / 360;
+                arcoMenor = super.getPerimetro() - arcoMayor;
             }else{
-                arcoMenor = (perimetro * angulo) / 360;
-                arcoMayor = perimetro - arcoMenor;
+                arcoMenor = (super.getPerimetro() * angulo) / 360;
+                arcoMayor = super.getPerimetro() - arcoMenor;
             }
             }
         }  
