@@ -13,12 +13,16 @@ package co.edu.ucundinamarca.modelo;
  * @since 1.0
  * @version 1.0.0
  */
-public class Circulo extends FigurasPlanas {
+public class Circulo extends FigurasPlanas implements IFuncionAuxiliar{
     /**
      * Variable encargada de alojar el valor ingresado por el usuario 
      */
     float radio;
 
+    /**
+     * Objeto encargado de alojar la descripcion de los arcos del circulo calculados
+     */
+    StringBuilder arcosCirculo = new StringBuilder();
     
     /**
      * Método usado para calcular el perímetro del círculo
@@ -75,6 +79,14 @@ public class Circulo extends FigurasPlanas {
             }
             }
         }  
-        System.out.println("En este círculo para un ángulo de "+ angulo +"°\n Sus arcos son:\n Mayor: "+arcoMayor+"\n Menor: "+arcoMenor);
+        arcosCirculo.append("En este círculo para un ángulo de ").append(angulo).append("°\n Sus arcos son:\n Mayor: ").append(formatoDecimal.format(arcoMayor)).append(" cm\n Menor: ").append(formatoDecimal.format(arcoMenor)).append(" cm");
      }
+
+    /**
+     * Método encargado de imprimir la descripción del cálculo de los arcos mayor y menor del círculo
+    */
+    @Override
+    public void imprimir() {
+        System.out.println(arcosCirculo.toString());
+    }
     }

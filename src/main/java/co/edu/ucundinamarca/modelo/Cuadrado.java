@@ -53,6 +53,6 @@ public class Cuadrado extends FigurasPlanas {
         
         diagonal = Math.sqrt(2)* lado;
         
-        System.out.println("El valor de las diagonales del cuadrado ingresado es: " + diagonal + "cm^2");
+        System.out.println("El valor de las diagonales del cuadrado ingresado es: " + formatoDecimal.format(diagonal) + " cm");
     }
   }

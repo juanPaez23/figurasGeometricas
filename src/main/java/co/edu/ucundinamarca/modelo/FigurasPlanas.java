@@ -5,6 +5,7 @@
  */
 package co.edu.ucundinamarca.modelo;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -37,6 +38,11 @@ public abstract class FigurasPlanas {
      */
     Scanner lector = new Scanner(System.in);
 
+    /**
+     * Objeto encargado de darle formato a los números con valores decimales
+     */
+    DecimalFormat formatoDecimal = new DecimalFormat("#0.000");
+    
     /**
      * Constructor de la clase FigurasPlanas
      */

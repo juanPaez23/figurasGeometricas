@@ -24,11 +24,6 @@ public class Triangulo extends FigurasPlanas{
     float ladoB;
     float ladoC;
     
-    
-    /**
-     * Objeto encargado de almacenar la clasificación del triángulo
-     */
-    StringBuilder clasificacion=new StringBuilder();
 
     
     /**
@@ -37,7 +32,7 @@ public class Triangulo extends FigurasPlanas{
     @Override
     public void capturarMedidas() {
         
-        System.out.println("Por favor digitar las tres medidas del triangulo");
+        System.out.println("Por favor digitar las tres medidas del triangulo (en centimetros)");
         System.out.println("Ingrese el valor del primer lado: ");
         ladoA = lector.nextFloat();
         System.out.println("Ingrese el valor del segundo lado: ");
@@ -80,6 +75,9 @@ public class Triangulo extends FigurasPlanas{
      * @return La clasificacion a la que pertenece el triangulo
      */
     public StringBuilder determinarClasificacion() {
+        
+        StringBuilder clasificacion=new StringBuilder();
+        
         if((ladoA==ladoB)&&(ladoA==ladoC)){
             clasificacion.append("Equilátero");
         }else{

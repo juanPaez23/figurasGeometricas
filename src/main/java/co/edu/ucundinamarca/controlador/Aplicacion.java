@@ -19,12 +19,13 @@ import co.edu.ucundinamarca.vista.InteraccionUsuario;
  */
 
 public class Aplicacion {
+    
     /**
      * Método encargado de ejecutar el programa
      * @param args 
      */
     public static void main(String[] args) {
         
-    InteraccionUsuario interacion = new InteraccionUsuario();
-    interacion.imprimir();
+    InteraccionUsuario interaccion = new InteraccionUsuario();
+    interaccion.imprimir();
     }}
