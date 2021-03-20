@@ -26,7 +26,7 @@ public class Rectangulo extends FigurasPlanas {
      */
     @Override
     public void capturarMedidas() {
-        
+        System.out.println("Por favor digitar las medidas del lado largo y corto del rectangulo");
         System.out.println("Digitar el lado más largo del rectángulo: ");
         ladoLargo = lector.nextFloat();
         System.out.println("Digitar el lado más corto del rectángulo: ");
@@ -62,8 +62,8 @@ public class Rectangulo extends FigurasPlanas {
      * Método encargado de calcular el valos de las diagonales del rectángulo
      */
     public void calcularDiagonales (){
-        double diagonal;
         
+        double diagonal;
         diagonal = Math.sqrt(Math.pow(ladoCorto,2) + Math.pow(ladoLargo,2));
         
         System.out.println("El valor de las diagonales del rectángulo ingresado es: " + diagonal + "cm^2");

@@ -37,6 +37,7 @@ public class Triangulo extends FigurasPlanas{
     @Override
     public void capturarMedidas() {
         
+        System.out.println("Por favor digitar las tres medidas del triangulo");
         System.out.println("Ingrese el valor del primer lado: ");
         ladoA = lector.nextFloat();
         System.out.println("Ingrese el valor del segundo lado: ");

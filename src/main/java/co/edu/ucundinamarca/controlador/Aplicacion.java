@@ -5,6 +5,7 @@
  */
 package co.edu.ucundinamarca.controlador;
 
+import co.edu.ucundinamarca.vista.InteraccionUsuario;
 
 
 
@@ -23,5 +24,7 @@ public class Aplicacion {
      * @param args 
      */
     public static void main(String[] args) {
-    
+        
+    InteraccionUsuario interacion = new InteraccionUsuario();
+    interacion.imprimir();
     }}

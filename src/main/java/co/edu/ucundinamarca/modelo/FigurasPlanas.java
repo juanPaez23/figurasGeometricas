@@ -61,7 +61,7 @@ public abstract class FigurasPlanas {
      */
     public void capturarMedidas (){
     
-        System.out.println("Digitar la medida del lado (en centimetros): ");
+        System.out.println("Digitar la medida (en centimetros): ");
         lado = lector.nextFloat();
     }
     
@@ -114,7 +114,7 @@ public abstract class FigurasPlanas {
         this.lado = lado;
     }
 
+ 
     
-    
-    
+       
 }
