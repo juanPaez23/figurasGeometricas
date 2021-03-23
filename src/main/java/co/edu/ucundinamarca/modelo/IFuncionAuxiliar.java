@@ -11,7 +11,7 @@ package co.edu.ucundinamarca.modelo;
  * @author Juan Camilo Paez Beltran
  * @author Eison Andrei Morales Pardo
  * @since 1.0
- * @version 1.0.0
+ * @version 1.1.0
  */
 public interface IFuncionAuxiliar {
     

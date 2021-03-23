@@ -11,26 +11,38 @@ package co.edu.ucundinamarca.modelo;
  * @author Juan Camilo Paez Beltran
  * @author Eison Andrei Morales Pardo
  * @since 1.0
- * @version 1.0.0
+ * @version 1.1.0
  */
-public class Circulo extends FigurasPlanas implements IFuncionAuxiliar{
-    /**
+public class Circulo extends FigurasPlanas {
+     /**
      * Variable encargada de alojar el valor ingresado por el usuario 
      */
-    float radio;
-
+        private float radio;
+        
     /**
+     * Constructor de la clase hija Circulo
+     * @param radio
+     * @param perimetro
+     * @param area 
+     */   
+    public Circulo(float radio, double perimetro, double area) {
+        super(perimetro, area);
+        this.radio = radio;
+    }
+        
+     /**
      * Objeto encargado de alojar la descripcion de los arcos del circulo calculados
      */
     StringBuilder arcosCirculo = new StringBuilder();
-    
+  
     /**
      * Método usado para calcular el perímetro del círculo
      */
+
+
     @Override
     public double calcularPerimetro() {
-        
-        radio = super.getLado();
+         radio = super.getMedida();
         super.setPerimetro(2*Math.PI*radio);
         
         return super.getPerimetro();
@@ -79,8 +91,11 @@ public class Circulo extends FigurasPlanas implements IFuncionAuxiliar{
             }
             }
         }  
+        if(angulo != 0){
         arcosCirculo.append("En este círculo para un ángulo de ").append(angulo).append("°\n Sus arcos son:\n Mayor: ").append(formatoDecimal.format(arcoMayor)).append(" cm\n Menor: ").append(formatoDecimal.format(arcoMenor)).append(" cm");
-     }
+        }else
+            arcosCirculo.append("No se calcularon arcos");
+        }
 
     /**
      * Método encargado de imprimir la descripción del cálculo de los arcos mayor y menor del círculo
@@ -88,5 +103,8 @@ public class Circulo extends FigurasPlanas implements IFuncionAuxiliar{
     @Override
     public void imprimir() {
         System.out.println(arcosCirculo.toString());
+        System.out.println("\n Radio: "+radio+" cm");
     }
+
+ 
     }

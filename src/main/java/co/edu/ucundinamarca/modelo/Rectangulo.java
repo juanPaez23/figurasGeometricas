@@ -11,17 +11,31 @@ package co.edu.ucundinamarca.modelo;
  * @author Juan Camilo Paez Beltran
  * @author Eison Andrei Morales Pardo
  * @since 1.0
- * @version 1.0.0
+ * @version 1.1.0
  */
 public class Rectangulo extends FigurasPlanas {
     /**
      * Variable encargada de alojar los valores ingresados por el usuario 
      */
-    float ladoLargo;
-    float ladoCorto;
-    
+    private float ladoLargo;
+    private float ladoCorto;
     
     /**
+     * Constructor de la clase hija Rectangulo
+     * @param ladoLargo
+     * @param ladoCorto
+     * @param perimetro
+     * @param area 
+     */
+    public Rectangulo(float ladoLargo, float ladoCorto, double perimetro, double area) {
+        super(perimetro, area);
+        this.ladoLargo = ladoLargo;
+        this.ladoCorto = ladoCorto;
+    }
+
+    
+    
+   /**
      * Método encargado de capturar las medidas de los dos lados opuestos del rectángulo
      */
     @Override
@@ -32,40 +46,50 @@ public class Rectangulo extends FigurasPlanas {
         System.out.println("Digitar el lado más corto del rectángulo: ");
         ladoCorto = lector.nextFloat();
     }
-    
-    
+
+
     /**
      * Método usado para calcular el perímetro del rectángulo
      */
     @Override
     public double calcularPerimetro() {
-        
+
         super.setPerimetro(2 * (ladoCorto + ladoLargo));
-        
+
         return super.getPerimetro();
     }
 
-    
+
     /**
      * Método usado para calcular el área del rectángulo
      */
     @Override
     public double calcularArea() {
-        
+
         super.setArea(ladoCorto * ladoLargo);
-        
+
         return super.getArea();
     }
-    
-    
+
+
     /**
      * Método encargado de calcular el valos de las diagonales del rectángulo
      */
     public void calcularDiagonales (){
-        
+
         double diagonal;
         diagonal = Math.sqrt(Math.pow(ladoCorto,2) + Math.pow(ladoLargo,2));
-        
+
         System.out.println("El valor de las diagonales del rectángulo ingresado es: " + formatoDecimal.format(diagonal) + " cm");
     }
+    /**
+     * Método encargado de imprimir la descripción del cuadrado
+    */
+    @Override
+    public void imprimir() {
+        System.out.println("\n Lado largo: "+ladoLargo+" cm");
+        System.out.println(" Lado corto: "+ladoCorto+" cm");
+    }
+    
+ 
     }

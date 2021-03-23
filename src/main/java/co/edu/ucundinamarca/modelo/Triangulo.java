@@ -12,7 +12,7 @@ package co.edu.ucundinamarca.modelo;
  * @author Juan Camilo Paez Beltran
  * @author Eison Andrei Morales Pardo
  * @since 1.0
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 public class Triangulo extends FigurasPlanas{
@@ -20,13 +20,27 @@ public class Triangulo extends FigurasPlanas{
     /**
      * Variables encargadas de almacenar el valor de los lados del triángulo
      */
-    float ladoA;
-    float ladoB;
-    float ladoC;
-    
+    private float ladoA;
+    private float ladoB;
+    private float ladoC;
+
+    /**
+     * Constructor de la clase hija Triangulo
+     * @param ladoA
+     * @param ladoB
+     * @param ladoC
+     * @param perimetro
+     * @param area 
+     */
+    public Triangulo(float ladoA, float ladoB, float ladoC, double perimetro, double area) {
+        super(perimetro, area);
+        this.ladoA = ladoA;
+        this.ladoB = ladoB;
+        this.ladoC = ladoC;
+    }
 
     
-    /**
+   /**
      * Método usado para capturar las medidas de los lados del triángulo
      */
     @Override
@@ -90,6 +104,14 @@ public class Triangulo extends FigurasPlanas{
 
         return clasificacion;
     }
-    
-    
+    /**
+     * Método encargado de imprimir la descripción del cuadrado
+    */
+    @Override
+    public void imprimir() {
+        System.out.println("\n Lado A: "+ladoA+" cm");
+        System.out.println(" Lado B: "+ladoB+" cm");
+        System.out.println(" Lado C: "+ladoC+" cm");
+    }
+
 }

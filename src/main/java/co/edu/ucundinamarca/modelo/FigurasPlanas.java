@@ -15,10 +15,10 @@ import java.util.Scanner;
  * @author Juan Camilo Paez Beltran
  * @author Eison Andrei Morales Pardo
  * @since 1.0
- * @version 1.0.0
+ * @version 1.1.0
  */
 
-public abstract class FigurasPlanas {
+public abstract class FigurasPlanas implements IFuncionAuxiliar {
     
     /**
      * Variable encargada de alojar el valor del perimetro de la figura geometrica
@@ -31,7 +31,7 @@ public abstract class FigurasPlanas {
     /**
      * Variable encargada de alojar el valor del lado de la figura geometrica
      */
-    private float lado;
+    private float medida;
     
     /**
      * Objeto de la clase Scanner encargado de capturar los valores ingresados por el usuario
@@ -68,7 +68,7 @@ public abstract class FigurasPlanas {
     public void capturarMedidas (){
     
         System.out.println("Digitar la medida (en centimetros): ");
-        lado = lector.nextFloat();
+        medida = lector.nextFloat();
     }
     
     
@@ -108,16 +108,16 @@ public abstract class FigurasPlanas {
         this.area = area;
     }
 
-    /**
-     * Método para leer la variable privada lado
-     * @return Valor de lado
+      /**
+     * Método para leer la variable privada medida
+     * @return Valor de medida
      */
-    public float getLado() {
-        return lado;
+    public float getMedida() {
+        return medida;
     }
 
-    public void setLado(float lado) {
-        this.lado = lado;
+    public void setMedida(float medida) {
+        this.medida = medida;
     }
 
  

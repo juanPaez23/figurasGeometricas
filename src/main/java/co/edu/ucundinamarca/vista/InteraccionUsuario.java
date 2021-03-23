@@ -19,7 +19,7 @@ import java.util.Scanner;
  * @author Eison Andrei Morales Pardo
  * @author Juan Camilo Páez Beltran 
  * @since 1.0
- * @version 1.0.4
+ * @version 1.1.0
  */
 public class InteraccionUsuario implements IFuncionAuxiliar{
     
@@ -32,10 +32,22 @@ public class InteraccionUsuario implements IFuncionAuxiliar{
      */
     DecimalFormat formatoDecimal = new DecimalFormat("#0.000");
     
-    Circulo circulo = new Circulo();
-    Cuadrado cuadrado = new Cuadrado();
-    Rectangulo rectangulo = new Rectangulo();
-    Triangulo triangulo = new Triangulo();
+   /**
+    * Objeto encargado de llamar las funciones de la clase Circulo
+    */
+    IFuncionAuxiliar circulo = new Circulo(0, 0, 0);
+    /**
+    * Objeto encargado de llamar las funciones de la clase Cuadrado
+    */
+    IFuncionAuxiliar cuadrado = new Cuadrado(0, 0, 0);
+    /**
+    * Objeto encargado de llamar las funciones de la clase Rectangulo
+    */
+    IFuncionAuxiliar rectangulo = new Rectangulo(0, 0, 0, 0);
+    /**
+    * Objeto encargado de llamar las funciones de la clase triangulo
+    */
+    IFuncionAuxiliar triangulo = new Triangulo(0, 0, 0, 0, 0);
     
     /**
      * Metodo encargado para realizar el menu para la interaccion con el usuario.
@@ -82,11 +94,10 @@ public class InteraccionUsuario implements IFuncionAuxiliar{
     public void imprimirCirculo(){
     
             System.out.println("Ingresa el radio del circulo");
-            circulo.capturarMedidas();
-            System.out.println("El resultado del perimetro es: "+formatoDecimal.format(circulo.calcularPerimetro())+" cm");
-            System.out.println("El resultado del area es: "+formatoDecimal.format(circulo.calcularArea())+ " cm^2");
-            circulo.calcularArcos();
-            circulo.imprimir();
+            ((FigurasPlanas)circulo).capturarMedidas();
+            System.out.println("El resultado del perimetro es: "+formatoDecimal.format(((FigurasPlanas)circulo).calcularPerimetro())+" cm");
+            System.out.println("El resultado del area es: "+formatoDecimal.format(((FigurasPlanas)circulo).calcularArea())+ " cm^2");
+            ((Circulo)circulo).calcularArcos();
     }
     
     /**
@@ -95,30 +106,30 @@ public class InteraccionUsuario implements IFuncionAuxiliar{
     public void ImprimirCuadrado(){
     
             System.out.println("Por favor digitar las medidas del lado del cuadrado");
-            cuadrado.capturarMedidas();
-            System.out.println("El resultado del perimetro es: "+formatoDecimal.format(cuadrado.calcularPerimetro())+" cm");
-            System.out.println("El resultado del area es: "+formatoDecimal.format(cuadrado.calcularArea())+" cm^2");
-            cuadrado.calcularDiagonales();
+            ((FigurasPlanas)cuadrado).capturarMedidas();
+            System.out.println("El resultado del perimetro es: "+formatoDecimal.format(((FigurasPlanas)cuadrado).calcularPerimetro())+" cm");
+            System.out.println("El resultado del area es: "+formatoDecimal.format(((FigurasPlanas)cuadrado).calcularArea())+" cm^2");
+            ((Cuadrado)cuadrado).calcularDiagonales();
     }
     /**
      * Metodo que se encarga de imprimir las funciones de la clase Rectangulo.
      */
     public void imprimirRectangulo(){
     
-            rectangulo.capturarMedidas();
-            System.out.println("El resultado del perimetro es: "+formatoDecimal.format(rectangulo.calcularPerimetro())+" cm");
-            System.out.println("El resultado del area es: "+formatoDecimal.format(rectangulo.calcularArea())+" cm^2");
-            rectangulo.calcularDiagonales();
+            ((FigurasPlanas)rectangulo).capturarMedidas();
+            System.out.println("El resultado del perimetro es: "+formatoDecimal.format(((FigurasPlanas)rectangulo).calcularPerimetro())+" cm");
+            System.out.println("El resultado del area es: "+formatoDecimal.format(((FigurasPlanas)rectangulo).calcularArea())+" cm^2");
+            ((Rectangulo)rectangulo).calcularDiagonales();
     }
     /**
      * Metodo que se encarga de imprimir las funciones de la clase Triangulo.
      */
     public void imprimirTriangulo(){
-    
-            triangulo.capturarMedidas();
-            System.out.println("El resultado del perimetro es: "+ formatoDecimal.format(triangulo.calcularPerimetro())+" cm");
-            System.out.println("El resultado del area es: "+ formatoDecimal.format(triangulo.calcularArea())+" cm^2");
-            System.out.println("La clasificacion del triangulo es: "+triangulo.determinarClasificacion());
+        
+            ((FigurasPlanas)triangulo).capturarMedidas();
+            System.out.println("El resultado del perimetro es: "+ formatoDecimal.format(((FigurasPlanas)triangulo).calcularPerimetro())+" cm");
+            System.out.println("El resultado del area es: "+ formatoDecimal.format(((FigurasPlanas)triangulo).calcularArea())+" cm^2");
+            System.out.println("La clasificacion del triangulo es: "+((Triangulo)triangulo).determinarClasificacion());
     }
     
     /**
@@ -126,16 +137,16 @@ public class InteraccionUsuario implements IFuncionAuxiliar{
      */
     public void imprimirTodasLasFiguras(){
     
-            FigurasPlanas[] vector= new FigurasPlanas[4];
+            IFuncionAuxiliar[] vector = new IFuncionAuxiliar[4];
             vector[0]= circulo;
             vector[1]= cuadrado;
             vector[2]= rectangulo;
             vector[3]= triangulo;
-            for(FigurasPlanas figuras : vector){
+            
+            for(IFuncionAuxiliar figuras : vector){
                 System.out.println("--------------------------------------------------------------------------------");
                 if(figuras instanceof Circulo) {
                     System.out.println("\t Circulo\n");
-                ((Circulo) figuras).imprimir();
             } else if(figuras  instanceof Cuadrado) {
                 System.out.println("\t Cuadrado\n");
                 ((Cuadrado) figuras).calcularDiagonales();
@@ -146,9 +157,10 @@ public class InteraccionUsuario implements IFuncionAuxiliar{
                 System.out.println("\t Triangulo\n");
                     System.out.println("La clasificacion de triangulo es: "+((Triangulo) figuras).determinarClasificacion());
             }
-            
-            System.out.println("\nPerímetro: "+formatoDecimal.format(figuras.calcularPerimetro())+" cm");
-            System.out.println("Área: "+formatoDecimal.format(figuras.calcularArea())+" cm^2");
+            ((FigurasPlanas)figuras).imprimir();
+            System.out.println("\nPerímetro: "+formatoDecimal.format(((FigurasPlanas)figuras).calcularPerimetro())+" cm");
+            System.out.println("Área: "+formatoDecimal.format(((FigurasPlanas)figuras).calcularArea())+" cm^2");
+         
         }
             }
     }
